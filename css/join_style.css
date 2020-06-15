@@ -1,0 +1,104 @@
+body{
+	padding: 0;
+	background: #34495e;
+	margin-left: 500px;
+	margin-top: 300px;
+}
+
+input::placeholder{
+	color: #696969;
+}
+
+input:focus::placeholder{
+	opacity: 0;
+}
+
+input:-webkit-autofill{
+	-webkit-box-shadow: 0 0 0 1000px #191919 inset;
+	-webkit-text-fill-color: white;
+}
+
+.join{
+	width: 500px;
+	margin: 10px auto;
+	padding: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	transform: translate(-50%, -50%);
+	background: #191919;
+	color: white;
+}
+
+.join h1{
+	font-weight: 500;
+	margin: 0;
+	padding: 10px;
+	padding-bottom: 30px;
+}
+
+.join .write{
+	border: 0;
+	color: white;
+	background: none;
+	display: inline-block;
+	margin: 10px 10px;
+	padding: 10px 20px;
+	text-align: center;
+	border:2px solid #3498db;
+	width: 150px;
+	outline: none;
+	border-radius: 24px;
+	transition: 0.25s;
+}
+
+.join #password1, #password2, #name, #tel, #birth{
+	margin-right: 25%;
+}
+.join .write:focus{
+	width: 200px;
+	border-color: #2ecc71;
+}
+
+.text{
+	float: left;
+	margin: 10px auto;
+	padding: 10px 10px;
+	text-align: right;
+	width: 100px;
+}
+
+#such{
+	float: center;
+	margin: 15px 4%;
+	border: 2px solid #2ecc71;
+	padding: 5px 10px;
+	outline: none;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer;
+	background: none;
+	color: white;
+}
+
+.button{
+	display: inline-block;
+	margin: 15px 8px;
+	border: 2px solid #2ecc71;
+	padding: 5px 10px;
+	outline: none;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer;
+	background: none;
+	color: white;
+}
+
+.join .button:hover, .join #such:hover{
+	background: #2ecc71;
+}
+
+.join .button:active, .join #such:active{
+	border: 1.5px;
+}
