@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>내 정보</title>
+    <meta charset="utf-8">
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+    <link rel="stylesheet" type="text/css" href="css/login_style.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+</head>
+
+<body style="background-color: #2A363B;">
+    <form class="login_box" action="login.html" method="post">
+        <h1>내정보</h1>
+        <span style="color:white;">아이디</span><input class="info" id="ID" type="text" name="" value="">
+        <span style="color:white;">이름</span><input class="info" id="ID" type="text" name="" value="">
+        <span style="color:white;">전화번호</span><input class="info" id="ID" type="text" name="" value="">
+        <span style="color:white;">생일</span><input class="info" id="ID" type="text" name="" value="">
+        <input id="BUTTON" type="button" name="" value="닫기" onclick="self.close()">
+    </form>
+</body>
+
+<script>
+    window.onload = function () {
+        var db = openDatabase('account1', '1.0', 'test', 2 * 1024 * 1024);
+
+        db.transaction(function (tx) {
+            tx.executeSql("select * from list", [], function (tx, result) {
+
+                var len = result.rows.length, i;
+
+                for (i = 0; i < len; i++) {
+                    if (result.rows.item(i).id == window.localStorage.getItem("id")) {
+                        document.getElementsByClassName("info")[0].value = result.rows.item(i).id;
+                        document.getElementsByClassName("info")[1].value = result.rows.item(i).name;
+                        document.getElementsByClassName("info")[2].value = result.rows.item(i).tel;
+                        document.getElementsByClassName("info")[3].value = result.rows.item(i).birth;
+                        return;
+                    }
+                }
+            });
+        });
+    }
+</script>
+</html>

@@ -1,32 +1,106 @@
-//아이디가 이미 존재하는지 확인하고 없으면 sql에 값을 삽입합니다.
+function joinvalue() {
+	var id = document.getElementsByClassName("write")[0].value;
+	var password1 = document.getElementsByClassName("write")[1].value;
+	var password2 = document.getElementsByClassName("write")[2].value;
+	var name = document.getElementsByClassName("write")[3].value;
+	var tel = document.getElementsByClassName("write")[4].value;
+	var birth = document.getElementsByClassName("write")[5].value;
 
-//일단은 체크 먼저 합니다. 체크를 하고 아이디가 없음을 확인하면  join함수를 실행해서 값을 삽입합니다.
-
-//id와 pass는 웬만해서는 스트링으로 넣어주세요.
-function Valid_check(id, pass){
-	var db = openDatabase('mydb2', '1.0', 'Test DB', 2 * 1024 * 1024);
-
-    db.transaction(function (tx) {
-        tx.executeSql('SELECT * FROM LOGS', [], function (_tx, results) {
-            var len = results.rows.length, i;
-
-            for (i = 0; i < len; i++) {
-                if (results.rows.item(i).id == id) {
-					//기능삽입(아이디가 존재할경우)
-                    break;
-                } else {
-					join(id, pass);
-                }
-            }
-        }, null);
-    });
+	if (id == "") {
+		alert("아이디를 입력하세요.");
+		id.focus();
+		return false;
+	} else if (password1 == "") {
+		alert("패스워드를 입력하세요.");
+		password1.focus();
+		return false;
+	} else if (password2 == "") {
+		alert("패스워드를 다시 한번 입력하세요.");
+		password2.focus();
+		return false;
+	} else if (name == "") {
+		alert("이름을 입력하세요.");
+		name.focus();
+		return false;
+	} else if (tel == "") {
+		alert("핸드폰 번호를 입력하세요.");
+		tel.focus();
+		return false;
+	} else if (birth == "") {
+		alert("생년월일을 입력하세요. (년/월/일)");
+		birth.focus();
+		return false;
+	} else if (birth.length > 8 || birth.length < 8) {
+		alert("생년월일은 8자리 수로 입력되어야 합니다.");
+		birth.focus();
+		return false;
+	} else if (password1 != password2) {
+		alert("패스워드가 다릅니다. \n다시 확인하세요.");
+		password1.focus();
+		return false;
+	} else {
+		Duplicate_check(id, password1, name, tel, birth);
+	}
 }
 
-function join(id, pass) {
-    var db = openDatabase('mydb2', '1.0', 'Test DB', 2 * 1024 * 1024);
+function Duplicate_check(id, password1, name, tel, birth) {
+	
+	var db = openDatabase('account1', '1.0', 'test', 2 * 1024 * 1024);
+	//데이터베이스를 생성합니다.
+	db.transaction(function (tx) {
+		//테이블을 생성합니다.
+		tx.executeSql('CREATE TABLE IF NOT EXISTS list (id, password1, name, tel, birth, memo)');
+		//테이블의 모든 값을 result에 리스트로 불러옵니다.
+		tx.executeSql("select * from list", [], function (tx, result) {
+			alert(result.rows.length);
+			if (result.rows.length == 0) {
+				input(id, password1, name, tel, birth);
+				return true;
+			} else {
+				for (var i = 0; i < result.rows.length; i++) {
+					if (result.rows.item(i).id == id) {
+						alert('아이디가 존재합니다.');
+						return false;
+					} if (i + 1 == result.rows.length) {
+						input(id, password1, name, tel, birth);
+						return true;
+					}
+				}
+			}
 
-    db.transaction(function (tx) {
+		});
+	});
+}
 
-        tx.executeSql('INSERT INTO LOGS (id,log) VALUES (?, ?'), [id, pass];
-    });
+function input(id, password1, name, tel, birth) {
+
+	var db = openDatabase('account1', '1.0', 'test', 2 * 1024 * 1024);
+	db.transaction(function (tx) {
+		tx.executeSql('INSERT INTO list (id, password1, name, tel, birth, memo) VALUES(?, ?, ?, ?, ?, ?)', [id, password1, name, tel, birth, "memo"]);
+		alert("회원가입 되었습니다.");
+		window.localStorage.setItem("id", id);
+		location.replace("main.html");
+	});
+}
+
+
+function search() {
+	var id = document.getElementsByClassName("write")[0].value;
+	var db = openDatabase('account1', '1.0', 'test', 2 * 1024 * 1024);
+
+	db.transaction(function (tx) {
+		tx.executeSql("select * from list", [], function (tx, result) {
+
+			var len = result.rows.length, i;
+
+			for (i = 0; i < len; i++) {
+				if (result.rows.item(i).id == id) {
+					document.getElementsByClassName("write")[0].value = "";
+					alert("아이디가 이미 존재합니다.");
+					return;
+				}
+			}
+			return;
+		});
+	});
 }
