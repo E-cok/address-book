@@ -6,11 +6,6 @@ function data_input() {
     var job = document.getElementsByClassName("write")[2].value;
     var email = document.getElementsByClassName("write")[3].value;
     var memo = document.getElementsByClassName("write")[4].value;
-    alert(id)
-    alert(name)
-    alert(call)
-    alert(job)
-    alert(email)
 
     var db = openDatabase('listtable', '1.0', 'data_list', 2 * 1024 * 1024);
     alert("db오픈")

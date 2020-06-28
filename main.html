@@ -31,7 +31,8 @@
 
 		<section>
 			<div class="box">
-				<input type = "button" style = "pointer-events:visible;" class="side_display" value="내 계정 목록만 표시하기" onclick="only_my_acc()">
+				<input type="button" style="pointer-events:visible;" class="side_display" value="내 계정 목록만 표시하기"
+					onclick="only_my_acc()">
 				<div style="color:white;"><b>이름:</b></div><input type=text class="side_display" value="이름">
 				<div style="color:white;"><b>전화번호:</b></div><input type=text class="side_display" value="전화번호">
 				<div style="color:white;"><b>직장:</b></div><input type=text class="side_display" value="직장">
@@ -58,15 +59,15 @@
 					</tr>
 				</table>
 			</div>
-			<!-- <table id="adressContent">
+			<table id="adressContent">
 				<tr id="adressTr" style="float: right;margin-left: 380px;width: 1000px;overflow:auto;">
-					<th style="width: 10%; text-align:center;"><input type="text" class="names" placeholder="이름 검색"/></th>
-					<th style="width: 25%; text-align:center;"><input type="text" placeholder="전화번호 검색" /></th>
-					<th style="width: 20%; text-align:center;"><input type="text" placeholder="직장 검색" /></th>
-					<th style="width: 25%; text-align:center;"><input type="text" placeholder="이메일 검색" /></th>
-					<th style="width: 20%; text-align:center;"><input type="text" placeholder="메모 검색" /></th>
+					<th style="width: 10%; text-align:center;"><input type="text" id="searching" class="calls_search"
+							placeholder="번호 검색" />
+					</th>
+					<th style="width: 25%; text-align:center;"><input type="button" value="검색해보기" onclick="search()">
+					</th>
 				</tr>
-			</table> -->
+			</table>
 		</section>
 		<div>
 
@@ -120,7 +121,7 @@
 
 			window.localStorage.setItem("name", td.eq(0).text());
 			window.localStorage.setItem("call", td.eq(1).text());
-			
+
 		});
 	}
 
