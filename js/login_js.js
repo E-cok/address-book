@@ -30,12 +30,12 @@ function login(id, password) {
 						location.href = "main.html"
 						window.localStorage.setItem("id", id);
 						return;
-					} else {
+					} else if (result.rows.item(i).id == id && result.rows.item(i).password1 != password){
 						alert('패스워드를 다시 확인해주세요.');
 						return;
 					}
-				} if (i + 1 == len) {
-					$('#ID').effect("shake", { times: 5, distance: 500 }, 700);
+				} else if (result.rows.item(i).id != id) {
+					alert('존재하지 않는 계정입니다.');
 					return;
 				}
 			}

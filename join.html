@@ -29,11 +29,11 @@
 		<div class="text">패스워드 확인</div>
 		<input class="write" type="password" id="password2" placeholder="Password 재입력"><br>
 		<div class="text">이름</div>
-		<input class="write" type="text" id="name"><br>
+		<input class="write" type="text" id="name" placeholder="한글 이름"><br>
 		<div class="text">휴대전화</div>
-		<input class="write" type="text" id="tel"><br>
+		<input class="write" type="text" id="tel" onkeyup="auto_add_dash()"><br>
 		<div class="text">생년월일</div>
-		<input class="write" type="text" id="birth" placeholder="YYYY/MM/DD"><br>
+		<input class="write" type="text" id="birth" placeholder="YYYYMMDD" onkeyup="auto_del_dash()"><br>
 		<input class="button" type="button" id="submit" value="회원가입" onclick="joinvalue()">
 		<input class="button" type="reset" id="reset" value="초기화">
 		<input class="button" type="button" id="back" value="돌아가기" onclick="location.href='login.html'"> 

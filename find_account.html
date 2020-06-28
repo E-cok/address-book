@@ -50,7 +50,7 @@
         <div id="tab-2" class="tab-content">
             <form class="login_box" action="login.html" method="post">
                 <h1>전화번호로 찾기</h1>
-                <input class="write" id="ID" type="text" name="" placeholder="전화번호를 입력해주세요.">
+                <input class="write" id="tel" type="text" name="" placeholder="전화번호를 입력해주세요." onkeyup="auto_add_dash()">
                 <input class="write" id="PASSWORD" type="text" name="" placeholder="아이디를 입력해주세요.">
                 <input id="find" type="button" name="" value="찾기" onclick="find_with_call()">
                 <input id="return" type="button" name="" value="돌아가기" onclick="location.href='login.html'">
@@ -60,7 +60,7 @@
         <div id="tab-3" class="tab-content">
             <form class="login_box" action="login.html" method="post">
                 <h1>생년월일로 찾기</h1>
-                <input class="write" id="ID" type="text" name="" placeholder="생년월일 입력해주세요.">
+                <input class="write" id="birth" type="text" name="" placeholder="생년월일 입력해주세요." onkeyup="auto_del_dash()">
                 <input class="write" id="PASSWORD" type="text" name="" placeholder="아이디를 입력해주세요.">
                 <input id="find" type="button" name="" value="찾기" onclick="find_with_birth()">
                 <input id="return" type="button" name="" value="돌아가기" onclick="location.href='login.html'">

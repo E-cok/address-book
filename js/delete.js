@@ -41,6 +41,7 @@ function delete_(name) {
     db.transaction(function (tx) {
         tx.executeSql('DELETE FROM listdata WHERE name=?', [name]);
         alert("삭제를 성공했습니다.");
+        opener.parent.location="main.html";
         self.close();
     });
 }

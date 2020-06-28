@@ -12,6 +12,30 @@ body{
 	padding: 0;
 }
 
+body img{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+input::placeholder{
+	color: #696969;
+}
+
+input:focus::placeholder{
+	opacity: 0;
+}
+
+input:-webkit-autofill{
+	-webkit-box-shadow: 0 0 0 1000px #2A363B inset;
+	-webkit-text-fill-color: white;
+}
+
+input href::placeholder{
+	color: white;
+}
 .header{
 	background-color: #141a1d;
 	text-align: center;
@@ -34,7 +58,7 @@ body{
 .header input{
 	border: 0;
 	outline: none;
-	margin: 0;
+	margin: 5px;
 	padding: 10px 30px;
 	float: right;
 	text-align: center;
@@ -105,6 +129,8 @@ aside{
 	background-color: #688896;
 	border: 1px solid black;
 	width: 1000px;
+	color: #EEE;
+	text-align: center;
 }
 
 #data_table tr:hover {
@@ -123,10 +149,11 @@ aside{
 
 .row {
 	position:absolute; 
-    top:5%; left:12%;
+    top:14%; 
+    left:6%;
 	border: 10px double rgb(37, 37, 41);
 	background-color: #2A363B;
-	height: 800px;
+	height: 700px;
 	width: 1500px;
 }
 
@@ -141,6 +168,7 @@ aside{
 .side_display{
 	pointer-events: none;
 	padding: 10px 30px;
+	margin: 10px;
 	text-align: center;
 	color: #FFF;
 	background: none;
@@ -151,10 +179,38 @@ aside{
 	cursor: pointer;
 }
 
+#my_button{
+	outline: none;
+	margin-top: 140px;
+}
+
+#my_button:hover{
+	background: #2ecc71;
+}
+
+#my_button:active{
+	padding: 12px 32px;
+}
+
 .box {
+	color: white;
+	text-align: center;
 	position: absolute;
 	width: 300px;
 	top: 45%;
-	left: 15%;
+	left: 13%;
 	transform: translate(-50%, -50%);
+}
+
+.mainContent th{
+	width: 20%;
+	text-align: center;
+}
+
+#ide {
+	border: 2px solid #355C7D;
+}
+
+#logout {
+	border: 2px solid #E84A5F;
 }

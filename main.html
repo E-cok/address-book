@@ -13,48 +13,48 @@
 </head>
 
 <body onload="adressList()" class="main">
-	<img src='./img/background2.gif' style="position: fixed;left: 0px;top: 0px;">
+	<img src='./img/background.gif'>
 	<div class="row">
 		<header>
 			<div class="header">
 				<h1>주소록</h1>
-				<input style="float:left;" class="iden" type="text" value="아이디"
+				<input style="float:left;" class="iden" id="ide" type="text" value="아이디"
 					onclick="window.open('my_info.html','creat','width=400,height=700,left=600')">
 				<input type="button" id="logout" name="logout" value="LOGOUT" onclick=location.href="login.html">
-				<input href="" id="adressCreate" class="sidebar" value="새 연락처 등록"
+				<input type="button" id="adressCreate" class="sidebar" value="새 연락처 등록"
 					onclick="window.open('creat_data_list.html','creat','width=400,height=700,left=600')">
-				<input href="" id="categoryRemove" value="세부 목록 삭제" class="sidebar"
+				<input type="button" id="categoryRemove" value="연락처 삭제" class="sidebar"
 					onclick="window.open('delete.html','creat','width=350,height=300,left=600')">
-				<input href="" class="sidebar" id="relo" value="모든 연락처" onclick="reload()">
+				<input type="button" class="sidebar" id="relo" value="모든 연락처" onclick="reload()">
 			</div>
 		</header>
 
 		<section>
 			<div class="box">
-				<input type = "button" style = "pointer-events:visible;" class="side_display" value="내 계정 목록만 표시하기" onclick="only_my_acc()">
-				<div style="color:white;"><b>이름:</b></div><input type=text class="side_display" value="이름">
-				<div style="color:white;"><b>전화번호:</b></div><input type=text class="side_display" value="전화번호">
-				<div style="color:white;"><b>직장:</b></div><input type=text class="side_display" value="직장">
-				<div style="color:white;"><b>이메일:</b></div><input type=text class="side_display" value="이메일">
-				<div style="color:white;"><b>메모:</b></div><input type=text class="side_display" value="메모">
+				<input type = "button" style = "pointer-events:visible;" class="side_display" id="my_button" value="내 계정 목록만 표시하기" onclick="only_my_acc()">
+				<div><b>이름</b></div><input type=text class="side_display" value="" placeholder="이름">
+				<div><b>전화번호</b></div><input type=text class="side_display" value="" placeholder="전화번호">
+				<div><b>직장</b></div><input type=text class="side_display" value="" placeholder="직장">
+				<div><b>이메일</b></div><input type=text class="side_display" value="" placeholder="이메일">
+				<div><b>메모</b></div><input type=text class="side_display" value="" placeholder="메모">
 			</div>
 			<div class="mainContent">
 				<table id="adressContent">
 					<tr id="adressTr">
-						<th style="width: 20%; text-align:center;">이름</th>
-						<th style="width: 20%; text-align:center;">전화번호</th>
-						<th style="width: 20%; text-align:center;">직장</th>
-						<th style="width: 20%; text-align:center;">이메일</th>
-						<th style="width: 20%; text-align:center;">메모</th>
+						<th>이름</th>
+						<th>전화번호</th>
+						<th>직장</th>
+						<th>이메일</th>
+						<th>메모</th>
 					</tr>
 				</table>
 				<table id="data_table" class="table_" onclick="call_number()">
 					<tr>
-						<td style="width: 20%; text-align:center;"></td>
-						<td style="width: 20%; text-align:center;"></td>
-						<td style="width: 20%; text-align:center;"></td>
-						<td style="width: 20%; text-align:center;"></td>
-						<td style="width: 20%; text-align:center;"></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
 					</tr>
 				</table>
 			</div>

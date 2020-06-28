@@ -34,6 +34,7 @@ function data_input() {
                             tx.executeSql('CREATE TABLE IF NOT EXISTS listdata (id, name, call, job, email, memo)');
                             tx.executeSql('INSERT INTO listdata (id, name, call, job, email, memo) VALUES(?, ?, ?, ?, ?, ?)', [id, name, call, job, email, memo]);
                             alert("연락처가 추가 되었습니다.");
+                            opener.parent.location="main.html";
                             self.close()
                         });
                         return;
@@ -54,4 +55,8 @@ function data_input() {
             });
         }
     });
+}
+
+function auto_add_dash() {
+    $(document).on("keyup", "#tel", function() { $(this).val( $(this).val().replace(/[^0-9]/g, "").replace(/(^02|^0505|^1[0-9]{3}|^0[0-9]{2})([0-9]+)?([0-9]{4})$/,"$1-$2-$3").replace("--", "-") ); });
 }
