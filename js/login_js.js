@@ -3,17 +3,12 @@ function login_check() {
 	var password = document.getElementsByClassName("write")[1].value;
 
 	if (id.value == "") {
-		$('#ID').effect("shake", { times: 5, distance: 500 }, 700);
+		alert('존재하지 않는 계정입니다.');
 		id.focus();
 		return false;
 	} if (password.value == "") {
 		alert("패스워드가 입력되지 않았습니다.");
-		$('#PASSWORD').effect("shake", { times: 5, distance: 500 }, 700);
 		password.focus();
-		return false;
-	} if (id.value == "" && password.value == "") {
-		$('#ID').effect("shake", { times: 5, distance: 500 }, 700);
-		$('#PASSWORD').effect("shake", { times: 5, distance: 500 }, 700);
 		return false;
 	} if (id.value != "" && password.value != "") {
 		login(id, password);
@@ -31,11 +26,12 @@ function login(id, password) {
 			for (i = 0; i < len; i++) {
 				if (result.rows.item(i).id == id) {
 					if (result.rows.item(i).password1 == password) {
+						alert('로그인 되었습니다.');
 						location.href = "main.html"
 						window.localStorage.setItem("id", id);
 						return;
 					} else {
-						$('#PASSWORD').effect("shake", { times: 5, distance: 500 }, 700);
+						alert('패스워드를 다시 확인해주세요.');
 						return;
 					}
 				} if (i + 1 == len) {

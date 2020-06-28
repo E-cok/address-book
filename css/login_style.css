@@ -1,5 +1,4 @@
 body{
-	
 	padding: 0;
 	margin-left: 500px;
 	margin-top: 300px;
@@ -16,6 +15,14 @@ input:focus::placeholder{
 input:-webkit-autofill{
 	-webkit-box-shadow: 0 0 0 1000px #2A363B inset;
 	-webkit-text-fill-color: white;
+}
+
+body img {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
 }
 
 .login_box{
