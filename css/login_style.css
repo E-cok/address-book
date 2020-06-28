@@ -1,16 +1,21 @@
 body{
+	
 	padding: 0;
-	background: #34495e;
 	margin-left: 500px;
 	margin-top: 300px;
 }
 
 input::placeholder{
-	color: #FFF;
+	color: #A9A9A9;
 }
 
 input:focus::placeholder{
 	opacity: 0;
+}
+
+input:-webkit-autofill{
+	-webkit-box-shadow: 0 0 0 1000px #2A363B inset;
+	-webkit-text-fill-color: white;
 }
 
 .login_box{
@@ -20,8 +25,9 @@ input:focus::placeholder{
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	background: #191919;
+	background: #2A363B;
 	text-align: center;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
 }
 
 .login_box h1{
@@ -34,7 +40,7 @@ input:focus::placeholder{
 	display: block;
 	margin: 20px auto;
 	text-align: center;
-	border: 2px solid #3498ab;
+	border: 2px solid #FFF;
 	padding: 14px 10px;
 	width: 200px;
 	outline: none;
@@ -44,11 +50,10 @@ input:focus::placeholder{
 }
 
 .login_box #ID:focus, .login_box #PASSWORD:focus{
-	width: 280px;
-	border-color: #2ecc71;
+	border-color: #E84A5F;
 }
 
-.login_box #SUBMIT, .login_box #BUTTON{
+.login_box #login, .login_box #BUTTON{
 	border: 0;
 	background: none;
 	display: inline-block;
@@ -63,6 +68,22 @@ input:focus::placeholder{
 	cursor: pointer;
 }
 
-.login_box #SUBMIT:hover, .login_box #BUTTON:hover{
+.login_box #login:hover, .login_box #BUTTON:hover{
+	border: 2px solid #2ecc71;
 	background: #2ecc71;
+}
+
+.info {
+	border: 0;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #FFF;
+	padding: 14px 10px;
+	width: 200px;
+	outline: none;
+	color: white;
+	border-radius: 24px;
+	pointer-events: none;
 }

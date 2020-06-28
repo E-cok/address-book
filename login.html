@@ -4,16 +4,21 @@
 	<title>로그인 페이지</title>
 	<meta charset="utf-8">
 	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
-	<link rel="stylesheet" type="text/css" href="login_style.css">
+	<link rel="stylesheet" type="text/css" href="css/login_style.css">
+	<script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/login_js.js"></script>
 </head>
 
 <body>
+	<img src='./img/background.gif' style = "position: fixed;left: 0px;top: 0px;">
 	<form class="login_box" action="login.html" method="post">
 		<h1>LOGIN</h1>
-		<input id="ID"type="text" name="" placeholder="User ID">
-		<input id="PASSWORD" type="password" name="" placeholder="Password">
-		<input id="SUBMIT" type="submit" name="" value="Login">
+		<input class="write" id="ID" type="text" name="" placeholder="User ID">
+		<input class="write" id="PASSWORD" type="password" name="" placeholder="Password">
+		<input id="login" type="button" name="" value="Login" onclick="login_check()">
 		<input id="BUTTON" type="button" name="" value="Join" onclick="location.href='join.html'">
+		<input id="BUTTON" type="button" name="" value="비밀번호찾기" onclick="location.href='find_account.html'">
 	</form>
 </body>
 </html>

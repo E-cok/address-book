@@ -1,5 +1,10 @@
 *{
 	box-sizing: border-box;
+	-ms-user-select: none;
+	 -moz-user-select: none;
+	  -webkit-user-select: none;
+	   -khtml-user-select: none;
+	    user-select:none;
 }
 
 body{
@@ -8,9 +13,10 @@ body{
 }
 
 .header{
-	background-color: #2A363B;
+	background-color: #141a1d;
 	text-align: center;
 	padding: 10px;
+	color: white;
 }
 .header:after{
 	content: '';
@@ -49,7 +55,6 @@ ul{
 	margin: 0;
 	padding: 0;
 	width: 150px;
-	background-color: #A9A9A9;
 	text-align: center;
 }
 
@@ -71,14 +76,13 @@ aside{
 }
 
 .mainContent{
+	margin-top: 50px;
+	width: 1000px;
+	height: 500px;
+	margin-right: 100px;
 	float: right;
-	margin-right: 10%;
-	width: 50%;
-}
-
-.mainContent th {
-	padding-top: 10px;
-	padding-left: 20px;
+	overflow:auto;
+	box-shadow: 5px 5px 5px 2px black;
 }
 
 .mainContent input{
@@ -89,4 +93,68 @@ aside{
 	content: "";
 	display: table;
 	clear: both;
+}
+
+.datalist {
+	background-color: white;
+	width: 500px;
+	height: 500px;
+}
+
+#data_table {
+	background-color: #688896;
+	border: 1px solid black;
+	width: 1000px;
+}
+
+#data_table tr:hover {
+	background-color: #4f6972;
+}
+
+#adressTr {
+	background-color: #323235;
+	color: white;
+	border: 1px solid black;
+}
+
+#adressContent {
+	width: 1000px;
+}
+
+.row {
+	position:absolute; 
+    top:5%; left:12%;
+	border: 10px double rgb(37, 37, 41);
+	background-color: #2A363B;
+	height: 800px;
+	width: 1500px;
+}
+
+#data_table tr:active {
+	background-color: #3b545c;
+}
+
+#data_table tr td{
+	width: 20%;
+}
+
+.side_display{
+	pointer-events: none;
+	padding: 10px 30px;
+	text-align: center;
+	color: #FFF;
+	background: none;
+	border: 2px solid #2ecc71;
+	border-radius: 24px;
+	transition: 0.25s;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+
+.box {
+	position: absolute;
+	width: 300px;
+	top: 45%;
+	left: 15%;
+	transform: translate(-50%, -50%);
 }

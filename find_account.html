@@ -1,0 +1,117 @@
+<html>
+
+<head>
+    <title>비밀번호찾기</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="js/finding_script.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/login_style_2.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('ul.tabs li').click(function () {
+                var tab_id = $(this).attr('data-tab');
+
+                $('ul.tabs li').removeClass('current');
+                $('.tab-content').removeClass('current');
+
+                $(this).addClass('current');
+                $("#" + tab_id).addClass('current');
+            })
+
+        })
+
+        window.onload = function () {
+            window.resizeTo(700, 700);
+        }
+    </script>
+
+    <style>
+        body {
+            background: #385d6d;
+            margin-top: 100px;
+            font-family: 'Trebuchet MS', serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 700px;
+            height: 700px;
+            margin: 0 auto;
+        }
+
+        ul.tabs {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        ul.tabs li {
+            background: none;
+            color: #222;
+            display: inline-block;
+            padding: 10px 15px;
+            background: #4e7f94;
+            cursor: pointer;
+            color: white;
+            box-shadow: 5px 5px 5px black;
+        }
+
+        ul.tabs li.current {
+            background: #2A363B;
+            color: #222;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            background: #2A363B;
+            padding: 15px;
+            box-shadow: 5px 5px 5px black;
+        }
+
+        .tab-content.current {
+            display: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="tabs">
+            <li class="tab-link current" data-tab="tab-1">이름으로 찾기</li>
+            <li class="tab-link" data-tab="tab-2">전화번호로 찾기</li>
+            <li class="tab-link" data-tab="tab-3">생년월일로 찾기</li>
+        </ul>
+
+        <div id="tab-1" class="tab-content current">
+            <body>
+                <form class="login_box" action="login.html" method="post">
+                    <h1>이름으로 찾기</h1>
+                    <input class="write" id="id" type="text" name="" placeholder="이름을 입력해주세요.">
+                    <input class="write" id="PASSWORD" type="text" name="" placeholder="아이디를 입력해주세요.">
+                    <input id="login" type="button" name="" value="찾기" onclick="find_with_name()">
+                </form>
+            </body>
+        </div>
+        <div id="tab-2" class="tab-content">
+            <form class="login_box" action="login.html" method="post">
+                <h1>전화번호로 찾기</h1>
+                <input class="write" id="id" type="text" name="" placeholder="전화번호를 입력해주세요.">
+                <input class="write" id="PASSWORD" type="text" name="" placeholder="아이디를 입력해주세요.">
+                <input id="login" type="button" name="" value="찾기" onclick="find_with_call()">
+            </form>
+        </div>
+        <div id="tab-3" class="tab-content">
+            <form class="login_box" action="login.html" method="post">
+                <h1>생년월일로 찾기</h1>
+                <input class="write" id="id" type="text" name="" placeholder="생년월일 입력해주세요.">
+                <input class="write" id="PASSWORD" type="text" name="" placeholder="아이디를 입력해주세요.">
+                <input id="login" type="button" name="" value="찾기" onclick="find_with_birth()">
+            </form>
+        </div>
+
+    </div>
+</body>
+
+</html>
