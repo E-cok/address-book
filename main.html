@@ -18,7 +18,7 @@
 		<header>
 			<div class="header">
 				<h1>주소록</h1>
-				<input style="float:left;" class="iden" id="ide" type="text" value="아이디"
+				<input type="button" class="iden" id="ide" value="아이디"
 					onclick="window.open('my_info.html','creat','width=400,height=700,left=600')">
 				<input type="button" id="logout" name="logout" value="LOGOUT" onclick=location.href="login.html">
 				<input type="button" id="adressCreate" class="sidebar" value="새 연락처 등록"
@@ -58,15 +58,15 @@
 					</tr>
 				</table>
 			</div>
-			<!-- <table id="adressContent">
-				<tr id="adressTr" style="float: right;margin-left: 380px;width: 1000px;overflow:auto;">
-					<th style="width: 10%; text-align:center;"><input type="text" class="names" placeholder="이름 검색"/></th>
-					<th style="width: 25%; text-align:center;"><input type="text" placeholder="전화번호 검색" /></th>
-					<th style="width: 20%; text-align:center;"><input type="text" placeholder="직장 검색" /></th>
-					<th style="width: 25%; text-align:center;"><input type="text" placeholder="이메일 검색" /></th>
-					<th style="width: 20%; text-align:center;"><input type="text" placeholder="메모 검색" /></th>
+			<table id="adressContent">
+				<tr id="adressTr1">
+					<th><input type="text" id="searching" class="calls_search"
+							placeholder="연락처 검색" / onkeyup="auto_add_dash()">
+					</th>
+					<th><input type="button" class="calls_Search_button" value="검색" onclick="search()">
+					</th>
 				</tr>
-			</table> -->
+			</table>
 		</section>
 		<div>
 

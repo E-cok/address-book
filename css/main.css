@@ -51,11 +51,11 @@ input href::placeholder{
 	background: none;
 	color: white;
 	display: inline-block;
-	margin: 0;
+	margin: 5px;
 	padding: 0;
 }
 
-.header input{
+.header input.sidebar{
 	border: 0;
 	outline: none;
 	margin: 5px;
@@ -73,6 +73,47 @@ input href::placeholder{
 .header input:hover{
 	background: #2ecc71;
 }
+
+input#logout{
+	border: 0;
+	outline: none;
+	margin: 5px;
+	padding: 10px 30px;
+	float: right;
+	text-align: center;
+	color: #FFF;
+	background: none;
+	border: 2px solid #E84A5F;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer;
+}
+
+#logout:hover {
+	background: #E84A5F;
+}
+
+input#ide{
+	display: inline-block;
+	vertical-align: top;
+	float: left;
+	border: 0;
+	outline: none;
+	margin: 5px;
+	padding: 10px 30px;
+	text-align: center;
+	color: #FFF;
+	background: none;
+	border: 2px solid #355C7D;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer;
+}
+
+#ide:hover {
+	background: #355C7D;
+}
+
 
 ul{
 	list-style-type: none;
@@ -113,6 +154,16 @@ aside{
 	margin-top: 100px;
 }
 
+.row {
+	position:absolute; 
+    top:14%; 
+    left:6%;
+	border: 10px double rgb(37, 37, 41);
+	background-color: #2A363B;
+	height: 700px;
+	width: 1500px;
+}
+
 .row:after{
 	content: "";
 	display: table;
@@ -145,16 +196,6 @@ aside{
 
 #adressContent {
 	width: 1000px;
-}
-
-.row {
-	position:absolute; 
-    top:14%; 
-    left:6%;
-	border: 10px double rgb(37, 37, 41);
-	background-color: #2A363B;
-	height: 700px;
-	width: 1500px;
 }
 
 #data_table tr:active {
@@ -207,10 +248,35 @@ aside{
 	text-align: center;
 }
 
-#ide {
-	border: 2px solid #355C7D;
+#adressTr1 {
+	float: left;
+	margin-left: 380px;
+	width: 1000px;
+	background-color: #323235;
+	color: white;
+	border: 1px solid black;
 }
 
-#logout {
-	border: 2px solid #E84A5F;
+.calls_search {
+	margin-left: 760px;
+	border: 2px solid #2ecc71;
+	background: none;
+	padding: 5px 10px;
+	color: #EEE;
+	outline: none;
+}
+
+.calls_Search_button { 
+	vertical-align: middle;
+	text-align:center;
+	border: 2px solid #2ecc71;
+	padding: 5px 10px;
+	background: none;
+	color: #EEE;
+	cursor: pointer;
+	outline: none;
+}
+
+.calls_Search_button:hover {
+	background: #2ecc71;
 }
