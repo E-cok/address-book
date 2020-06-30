@@ -1,0 +1,122 @@
+body {
+    padding: 0;
+    margin-left: 500px;
+    margin-top: 300px;
+ }
+
+input::placeholder{
+    color: #A9A9A9;
+}
+
+input:focus::placeholder{
+    opacity: 0;
+}
+
+input:-webkit-autofill{
+    -webkit-box-shadow: 0 0 0 1000px #2A363B inset;
+    -webkit-text-fill-color: white;
+}
+
+body img{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.login_box{
+    background: #2A363B;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(51, 51, 51, 0.4);
+}
+
+.login_box h1{
+    color: white; 
+}
+
+.login_box #ID, .login_box #PASSWORD, .login_box #tel, .login_box #birth{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #FFF;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+.login_box #ID:focus, .login_box #PASSWORD:focus, .login_box #tel:focus, .login_box #birth:focus{
+    width: 280px;
+    border-color: #E84A5F;
+}
+
+.login_box #find, .login_box #BUTTON, .login_box #return {
+    border: 0;
+    background: none;
+    display: inline-block;
+    color: white;
+    margin: 20px 10px;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 5px 30px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.login_box #find:hover, .login_box #BUTTON:hover, .login_box #return:hover {
+    border: 2px solid #2ecc71;
+    background: #2ecc71;
+}
+
+.container {
+    width: 700px;
+    height: 700px;
+    margin: 0px;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ul.tabs {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+ul.tabs li {
+    background: none;
+    color: #222;
+    margin: 0;
+    display: inline-block;
+    padding: 10px 15px;
+    background: #E84A5F;
+    cursor: pointer;
+    color: white;
+    transition: all .3s;
+}
+
+ul.tabs li.current {
+    background: #2A363B;
+    color: #222;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    background: #2A363B;
+    padding: 15px;
+    margin: 0;
+    box-shadow: 5px 5px 5px #191919;
+}
+
+.tab-content.current {
+    display: inherit;
+}

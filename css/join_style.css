@@ -1,6 +1,6 @@
 body{
 	padding: 0;
-	background: #34495e;
+	background: #FFF;
 	margin-left: 500px;
 	margin-top: 300px;
 }
@@ -14,12 +14,20 @@ input:focus::placeholder{
 }
 
 input:-webkit-autofill{
-	-webkit-box-shadow: 0 0 0 1000px #191919 inset;
+	-webkit-box-shadow: 0 0 0 1000px #2A363B inset;
 	-webkit-text-fill-color: white;
 }
 
+body img{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
 .join{
-	width: 500px;
+	width: 450px;
 	margin: 10px auto;
 	padding: 20px;
 	position: absolute;
@@ -27,8 +35,9 @@ input:-webkit-autofill{
 	left: 50%;
 	text-align: center;
 	transform: translate(-50%, -50%);
-	background: #191919;
+	background: #2A363B;
 	color: white;
+	box-shadow: 0 5px 10px rgba(51, 51, 51, 0.4);
 }
 
 .join h1{
@@ -38,49 +47,36 @@ input:-webkit-autofill{
 	padding-bottom: 30px;
 }
 
-.join .write{
+.join .write {
 	border: 0;
 	color: white;
 	background: none;
 	display: inline-block;
 	margin: 10px 10px;
+	margin-right: 15%;
 	padding: 10px 20px;
 	text-align: center;
-	border:2px solid #3498db;
+	border:2px solid #FFF;
 	width: 150px;
 	outline: none;
 	border-radius: 24px;
 	transition: 0.25s;
 }
 
-.join #password1, #password2, #name, #tel, #birth{
-	margin-right: 25%;
-}
 .join .write:focus{
 	width: 200px;
-	border-color: #2ecc71;
+	border-color: #E84A5F;
 }
 
 .text{
 	float: left;
 	margin: 10px auto;
-	padding: 10px 10px;
+	padding: 10px 20px;
+	padding-right: 0;
 	text-align: right;
-	width: 100px;
+	width: 90px;
 }
 
-#such{
-	float: center;
-	margin: 15px 4%;
-	border: 2px solid #2ecc71;
-	padding: 5px 10px;
-	outline: none;
-	border-radius: 24px;
-	transition: 0.25s;
-	cursor: pointer;
-	background: none;
-	color: white;
-}
 
 .button{
 	display: inline-block;
@@ -101,4 +97,5 @@ input:-webkit-autofill{
 
 .join .button:active, .join #such:active{
 	border: 1.5px;
+	background: #2ecc71;
 }

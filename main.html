@@ -1,13 +1,129 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>전화번호부</title>
 	<meta charset="utf-8">
 	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
-	<link rel="stylesheet" type="text/css" href="">
-	<script type="text/javascript" src=""></script>
-</head>
-<body>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="js/main.js"></script>
+	<script src="js/jquery-1.11.2.min.js"></script>
+	<script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
 
+</head>
+
+<body onload="adressList()" class="main">
+	<img src='./img/background.gif'>
+	<div class="row">
+		<header>
+			<div class="header">
+				<h1>주소록</h1>
+				<input type="button" class="iden" id="ide" value="아이디"
+					onclick="window.open('my_info.html','creat','width=400,height=700,left=600')">
+				<input type="button" id="logout" name="logout" value="LOGOUT" onclick=location.href="login.html">
+				<input type="button" id="adressCreate" class="sidebar" value="새 연락처 등록"
+					onclick="window.open('creat_data_list.html','creat','width=400,height=700,left=600')">
+				<input type="button" id="categoryRemove" value="연락처 삭제" class="sidebar"
+					onclick="window.open('delete.html','creat','width=350,height=300,left=600')">
+				<input type="button" class="sidebar" id="relo" value="모든 연락처" onclick="reload()">
+			</div>
+		</header>
+
+		<section>
+			<div class="box">
+				<input type = "button" style = "pointer-events:visible;" class="side_display" id="my_button" value="내 계정 목록만 표시하기" onclick="only_my_acc()">
+				<div><b>이름</b></div><input type=text class="side_display" value="" placeholder="이름">
+				<div><b>전화번호</b></div><input type=text class="side_display" value="" placeholder="전화번호">
+				<div><b>직장</b></div><input type=text class="side_display" value="" placeholder="직장">
+				<div><b>이메일</b></div><input type=text class="side_display" value="" placeholder="이메일">
+				<div><b>메모</b></div><input type=text class="side_display" value="" placeholder="메모">
+			</div>
+			<div class="mainContent">
+				<table id="adressContent">
+					<tr id="adressTr">
+						<th>이름</th>
+						<th>전화번호</th>
+						<th>직장</th>
+						<th>이메일</th>
+						<th>메모</th>
+					</tr>
+				</table>
+				<table id="data_table" class="table_" onclick="call_number()">
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+			<table id="adressContent">
+				<tr id="adressTr1">
+					<th><input type="text" id="searching" class="calls_search"
+							placeholder="연락처 검색" / onkeyup="auto_add_dash()">
+					</th>
+					<th><input type="button" class="calls_Search_button" value="검색" onclick="search()">
+					</th>
+				</tr>
+			</table>
+		</section>
+		<div>
+
+		</div>
+
+		<footer>
+
+		</footer>
+	</div>
 </body>
+
+<script>
+
+	window.onload = function () {
+		var Identity
+		Identity = window.localStorage.getItem("id");
+		document.getElementsByClassName("iden")[0].value = Identity + '님 접속 중';
+
+		var table = document.getElementById("data_table");
+
+		var db = openDatabase('listtable', '1.0', 'data_list', 2 * 1024 * 1024);
+
+		db.transaction(function (tx) {
+			tx.executeSql("select * from listdata", [], function (tx, result) {
+				var len = result.rows.length, i;
+
+				for (i = 0; i < len; i++) {
+					var row = table.insertRow(table.rows.length);
+
+					row.insertCell(0).innerHTML = result.rows.item(i).name;
+					row.insertCell(1).innerHTML = result.rows.item(i).call;
+					row.insertCell(2).innerHTML = result.rows.item(i).job;
+					row.insertCell(3).innerHTML = result.rows.item(i).email;
+					row.insertCell(4).innerHTML = result.rows.item(i).memo;
+
+				}
+			});
+		});
+	}
+
+	function call_number() {
+		$("#data_table tr").click(function () {
+			var tr = $(this);
+			var td = tr.children();
+
+			document.getElementsByClassName("side_display")[1].value = td.eq(0).text();
+			document.getElementsByClassName("side_display")[2].value = td.eq(1).text();
+			document.getElementsByClassName("side_display")[3].value = td.eq(2).text();
+			document.getElementsByClassName("side_display")[4].value = td.eq(3).text();
+			document.getElementsByClassName("side_display")[5].value = td.eq(4).text();
+
+			window.localStorage.setItem("name", td.eq(0).text());
+			window.localStorage.setItem("call", td.eq(1).text());
+			
+		});
+	}
+
+</script>
+
 </html>

@@ -1,0 +1,282 @@
+*{
+	box-sizing: border-box;
+	-ms-user-select: none;
+	 -moz-user-select: none;
+	  -webkit-user-select: none;
+	   -khtml-user-select: none;
+	    user-select:none;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+body img{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+input::placeholder{
+	color: #696969;
+}
+
+input:focus::placeholder{
+	opacity: 0;
+}
+
+input:-webkit-autofill{
+	-webkit-box-shadow: 0 0 0 1000px #2A363B inset;
+	-webkit-text-fill-color: white;
+}
+
+input href::placeholder{
+	color: white;
+}
+.header{
+	background-color: #141a1d;
+	text-align: center;
+	padding: 10px;
+	color: white;
+}
+.header:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.header h1{
+	background: none;
+	color: white;
+	display: inline-block;
+	margin: 5px;
+	padding: 0;
+}
+
+.header input.sidebar{
+	border: 0;
+	outline: none;
+	margin: 5px;
+	padding: 10px 30px;
+	float: right;
+	text-align: center;
+	color: #FFF;
+	background: none;
+	border: 2px solid #2ecc71;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer;
+}
+
+.header input:hover{
+	background: #2ecc71;
+}
+
+input#logout{
+	border: 0;
+	outline: none;
+	margin: 5px;
+	padding: 10px 30px;
+	float: right;
+	text-align: center;
+	color: #FFF;
+	background: none;
+	border: 2px solid #E84A5F;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer;
+}
+
+#logout:hover {
+	background: #E84A5F;
+}
+
+input#ide{
+	display: inline-block;
+	vertical-align: top;
+	float: left;
+	border: 0;
+	outline: none;
+	margin: 5px;
+	padding: 10px 30px;
+	text-align: center;
+	color: #FFF;
+	background: none;
+	border: 2px solid #355C7D;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer;
+}
+
+#ide:hover {
+	background: #355C7D;
+}
+
+
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 150px;
+	text-align: center;
+}
+
+li a{
+	display: block;
+	color: #000;
+	padding: 15px 16px;
+	text-decoration: none;
+}
+
+li a:hover{
+	background-color: #555;
+	color: white;
+}
+
+aside{
+	float: left;
+	width: 25%;
+}
+
+.mainContent{
+	margin-top: 50px;
+	width: 1000px;
+	height: 500px;
+	margin-right: 100px;
+	float: right;
+	overflow:auto;
+	box-shadow: 5px 5px 5px 2px black;
+}
+
+.mainContent input{
+	margin-top: 100px;
+}
+
+.row {
+	position:absolute; 
+    top:14%; 
+    left:6%;
+	border: 10px double rgb(37, 37, 41);
+	background-color: #2A363B;
+	height: 700px;
+	width: 1500px;
+}
+
+.row:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.datalist {
+	background-color: white;
+	width: 500px;
+	height: 500px;
+}
+
+#data_table {
+	background-color: #688896;
+	border: 1px solid black;
+	width: 1000px;
+	color: #EEE;
+	text-align: center;
+}
+
+#data_table tr:hover {
+	background-color: #4f6972;
+}
+
+#adressTr {
+	background-color: #323235;
+	color: white;
+	border: 1px solid black;
+}
+
+#adressContent {
+	width: 1000px;
+}
+
+#data_table tr:active {
+	background-color: #3b545c;
+}
+
+#data_table tr td{
+	width: 20%;
+}
+
+.side_display{
+	pointer-events: none;
+	padding: 10px 30px;
+	margin: 10px;
+	text-align: center;
+	color: #FFF;
+	background: none;
+	border: 2px solid #2ecc71;
+	border-radius: 24px;
+	transition: 0.25s;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+
+#my_button{
+	outline: none;
+	margin-top: 140px;
+}
+
+#my_button:hover{
+	background: #2ecc71;
+}
+
+#my_button:active{
+	padding: 12px 32px;
+}
+
+.box {
+	color: white;
+	text-align: center;
+	position: absolute;
+	width: 300px;
+	top: 45%;
+	left: 13%;
+	transform: translate(-50%, -50%);
+}
+
+.mainContent th{
+	width: 20%;
+	text-align: center;
+}
+
+#adressTr1 {
+	float: left;
+	margin-left: 380px;
+	width: 1000px;
+	background-color: #323235;
+	color: white;
+	border: 1px solid black;
+}
+
+.calls_search {
+	margin-left: 760px;
+	border: 2px solid #2ecc71;
+	background: none;
+	padding: 5px 10px;
+	color: #EEE;
+	outline: none;
+}
+
+.calls_Search_button { 
+	vertical-align: middle;
+	text-align:center;
+	border: 2px solid #2ecc71;
+	padding: 5px 10px;
+	background: none;
+	color: #EEE;
+	cursor: pointer;
+	outline: none;
+}
+
+.calls_Search_button:hover {
+	background: #2ecc71;
+}
